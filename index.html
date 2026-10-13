@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>CHOOSE TERMINAL // AA vs VV</title>
+  <title>CHOOSE TERMINAL // IoT vs VV</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -523,7 +523,7 @@
     <div class="ticker-badge">SELECT INTERFACE</div>
     <div class="ticker-scroll">
       <div class="ticker-text">
-        &bull; DUAL-FACTION GATEWAY INITIALIZED &bull; LEFT: AA PROTOCOL (cycu-a.zevzhan.com) &bull; RIGHT: VV PROTOCOL (cycu-v.zevzhan.com) &bull; CLICK ONCE TO PRIME THEME (WHITE / BLACK) &bull; CLICK AGAIN TO CONFIRM & ENTER &bull;
+        &bull; DUAL-FACTION GATEWAY INITIALIZED &bull; LEFT: IoT LAB (iot.zevzhan.com) &bull; RIGHT: VV PROTOCOL (k.zevzhan.com) &bull; CLICK ONCE TO PRIME THEME (WHITE / BLACK) &bull; CLICK AGAIN TO CONFIRM & ENTER &bull;
       </div>
     </div>
   </header>
@@ -537,35 +537,35 @@
     </div>
 
     <!-- LEFT SIDE: AA -->
-    <section class="panel-half panel-aa" id="btn-aa" role="button" tabindex="0" aria-label="選擇 AA 終端機">
+    <section class="panel-half panel-aa" id="btn-aa" role="button" tabindex="0" aria-label="選擇 IoT 物聯網實驗終端機">
       <div class="tech-corner tl"></div>
       <div class="tech-corner tr"></div>
       <div class="tech-corner bl"></div>
       <div class="tech-corner br"></div>
-      <div class="watermark">AA</div>
+      <div class="watermark">IoT</div>
 
       <div class="character-box">
         <div class="faction-id">
-          <span></span> PROTOCOL // ALPHA <span></span>
+          <span></span> IoT LAB // EXPERIMENTS <span></span>
         </div>
 
-        <h1 class="giant-title">AA</h1>
+        <h1 class="giant-title">IoT</h1>
 
         <div class="dest-url">
-          <span>🌐 cycu-a.zevzhan.com</span>
-          <span style="opacity:0.6;">/ aa2.html</span>
+          <span>🌐 iot.zevzhan.com</span>
+          <span style="opacity:0.6;">/ labs</span>
         </div>
 
         <p class="desc-tagline">
-          iLearning 外部專屬傳送門 &bull; 核心課表一鍵直達 &bull; 極簡純白光域
+          物聯網課程專區 &bull; 實驗流程逐步導引 &bull; 極簡純白光域
         </p>
 
         <div class="cta-box" id="cta-aa">
           <div class="cta-main">
             <span class="pulse-radar"></span>
-            <span id="cta-text-aa">CLICK TO ARM [AA]</span>
+            <span id="cta-text-aa">CLICK TO ARM [IoT]</span>
           </div>
-          <div class="cta-sub" id="cta-sub-aa">MORPH TO LUXE WHITE &bull; PRESS [A] / [←]</div>
+          <div class="cta-sub" id="cta-sub-aa">MORPH TO LUXE WHITE &bull; PRESS [I] / [←]</div>
         </div>
       </div>
     </section>
@@ -586,7 +586,7 @@
         <h1 class="giant-title">VV</h1>
 
         <div class="dest-url">
-          <span>🌐 cycu-v.zevzhan.com</span>
+          <span>🌐 k.zevzhan.com</span>
           <span style="opacity:0.6;">/ vv2aa.html</span>
         </div>
 
@@ -610,7 +610,7 @@
   <footer class="footer-hud">
     <div class="key-hints">
       <span>KEYBOARD:</span>
-      <span><kbd>←</kbd> 或 <kbd>A</kbd> 選定 AA</span>
+      <span><kbd>←</kbd> 或 <kbd>I</kbd> 選定 IoT</span>
       <span><kbd>→</kbd> 或 <kbd>V</kbd> 選定 VV</span>
       <span><kbd>ENTER</kbd> 確認進入</span>
     </div>
@@ -637,8 +637,8 @@
       const flashScreen = document.getElementById('action-flash');
 
       // Destination Targets
-      const URL_AA = 'https://cycu-a.zevzhan.com/aa2.html';
-      const URL_VV = 'https://cycu-v.zevzhan.com/vv2aa.html';
+      const URL_AA = 'https://iot.zevzhan.com';
+      const URL_VV = 'https://k.zevzhan.com/vv2aa.html';
 
       // Internal State: 'none' | 'aa' | 'vv'
       let currentSelected = 'none';
@@ -669,7 +669,7 @@
       function handleAAClick() {
         if (currentSelected === 'aa') {
           // Second click on AA: Confirm and Navigate
-          executeRedirect(URL_AA, 'AA INTERFACE');
+          executeRedirect(URL_AA, 'IoT LAB');
         } else {
           // First click on AA (or switching from VV):
           // Turn entire background to WHITE, prime AA, cancel VV
@@ -677,15 +677,15 @@
           html.setAttribute('data-selected', 'aa');
 
           // Update AA texts to Confirmation state
-          ctaTextAA.textContent = 'ENTER AA INTERFACE ↗';
+          ctaTextAA.textContent = 'ENTER IoT LAB ↗';
           ctaSubAA.textContent = 'CONFIRM SELECTION // CLICK TO LAUNCH';
 
           // Reset VV texts to Standby
           ctaTextVV.textContent = 'CLICK TO ARM [VV]';
           ctaSubVV.textContent = 'MORPH TO STEALTH BLACK &bull; PRESS [V] / [→]';
 
-          statusReadout.textContent = 'ARMED: AA // CLICK AGAIN TO ENTER';
-          showToast('AA SELECTED &bull; WHITE THEME ARMED &bull; CLICK TO ENTER');
+          statusReadout.textContent = 'ARMED: IoT // CLICK AGAIN TO ENTER';
+          showToast('IoT SELECTED &bull; WHITE THEME ARMED &bull; CLICK TO ENTER');
         }
       }
 
@@ -705,8 +705,8 @@
           ctaSubVV.textContent = 'CONFIRM SELECTION // CLICK TO LAUNCH';
 
           // Reset AA texts to Standby
-          ctaTextAA.textContent = 'CLICK TO ARM [AA]';
-          ctaSubAA.textContent = 'MORPH TO LUXE WHITE &bull; PRESS [A] / [←]';
+          ctaTextAA.textContent = 'CLICK TO ARM [IoT]';
+          ctaSubAA.textContent = 'MORPH TO LUXE WHITE &bull; PRESS [I] / [←]';
 
           statusReadout.textContent = 'ARMED: VV // CLICK AGAIN TO ENTER';
           showToast('VV SELECTED &bull; BLACK THEME ARMED &bull; CLICK TO ENTER');
@@ -721,14 +721,14 @@
       window.addEventListener('keydown', (e) => {
         const key = e.key;
 
-        if (key === 'ArrowLeft' || key === 'a' || key === 'A') {
+        if (key === 'ArrowLeft' || key === 'i' || key === 'I') {
           handleAAClick();
         } else if (key === 'ArrowRight' || key === 'v' || key === 'V') {
           handleVVClick();
         } else if (key === 'Enter' || key === ' ') {
           e.preventDefault();
           if (currentSelected === 'aa') {
-            executeRedirect(URL_AA, 'AA INTERFACE');
+            executeRedirect(URL_AA, 'IoT LAB');
           } else if (currentSelected === 'vv') {
             executeRedirect(URL_VV, 'VV INTERFACE');
           } else {

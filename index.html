@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>CHOOSE TERMINAL // IoT vs VV</title>
+  <title>LAB TERMINAL</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -520,10 +520,10 @@
 
   <!-- Top Status Bar -->
   <header class="ticker-bar">
-    <div class="ticker-badge">SELECT INTERFACE</div>
+    <div class="ticker-badge">LAB INTERFACE</div>
     <div class="ticker-scroll">
       <div class="ticker-text">
-        &bull; DUAL-FACTION GATEWAY INITIALIZED &bull; LEFT: IoT LAB (lab.zevzhan.com) &bull; RIGHT: VV PROTOCOL (k.zevzhan.com) &bull; CLICK ONCE TO PRIME THEME (WHITE / BLACK) &bull; CLICK AGAIN TO CONFIRM & ENTER &bull;
+        &bull; GATEWAY INITIALIZED &bull; LAB (lab.zevzhan.com) &bull; CLICK ONCE TO PRIME THEME &bull; CLICK AGAIN TO CONFIRM & ENTER &bull;
       </div>
     </div>
   </header>
@@ -531,25 +531,20 @@
   <!-- Central Split Arena -->
   <main class="arena" role="region" aria-label="角色分流選擇">
 
-    <!-- Divider and Crosshair Target Indicator -->
-    <div class="divider-line">
-      <div class="crosshair">SYS</div>
-    </div>
-
     <!-- LEFT SIDE: AA -->
-    <section class="panel-half panel-aa" id="btn-aa" role="button" tabindex="0" aria-label="選擇 IoT 物聯網實驗終端機">
+    <section class="panel-half panel-aa" id="btn-lab" role="button" tabindex="0" aria-label="進入 LAB 實驗終端機">
       <div class="tech-corner tl"></div>
       <div class="tech-corner tr"></div>
       <div class="tech-corner bl"></div>
       <div class="tech-corner br"></div>
-      <div class="watermark">IoT</div>
+      <div class="watermark">LAB</div>
 
       <div class="character-box">
         <div class="faction-id">
-          <span></span> IoT LAB // EXPERIMENTS <span></span>
+          <span></span> LAB // EXPERIMENTS <span></span>
         </div>
 
-        <h1 class="giant-title">IoT</h1>
+        <h1 class="giant-title">LAB</h1>
 
         <div class="dest-url">
           <span>🌐 lab.zevzhan.com</span>
@@ -560,46 +555,12 @@
           物聯網課程專區 &bull; 實驗流程逐步導引 &bull; 極簡純白光域
         </p>
 
-        <div class="cta-box" id="cta-aa">
+        <div class="cta-box" id="cta-lab">
           <div class="cta-main">
             <span class="pulse-radar"></span>
-            <span id="cta-text-aa">CLICK TO ARM [IoT]</span>
+            <span id="cta-text-lab">CLICK TO ARM [LAB]</span>
           </div>
-          <div class="cta-sub" id="cta-sub-aa">MORPH TO LUXE WHITE &bull; PRESS [I] / [←]</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RIGHT SIDE: VV -->
-    <section class="panel-half panel-vv" id="btn-vv" role="button" tabindex="0" aria-label="選擇 VV 終端機">
-      <div class="tech-corner tl"></div>
-      <div class="tech-corner tr"></div>
-      <div class="tech-corner bl"></div>
-      <div class="tech-corner br"></div>
-      <div class="watermark">VV</div>
-
-      <div class="character-box">
-        <div class="faction-id">
-          <span></span> PROTOCOL // VICTOR <span></span>
-        </div>
-
-        <h1 class="giant-title">VV</h1>
-
-        <div class="dest-url">
-          <span>🌐 k.zevzhan.com</span>
-          <span style="opacity:0.6;">/ vv2aa.html</span>
-        </div>
-
-        <p class="desc-tagline">
-          互動跳轉大綱 &bull; 雙矩陣與每日切換 &bull; 隱形黑曜科技 HUD
-        </p>
-
-        <div class="cta-box" id="cta-vv">
-          <div class="cta-main">
-            <span class="pulse-radar"></span>
-            <span id="cta-text-vv">CLICK TO ARM [VV]</span>
-          </div>
-          <div class="cta-sub" id="cta-sub-vv">MORPH TO STEALTH BLACK &bull; PRESS [V] / [→]</div>
+          <div class="cta-sub" id="cta-sub-lab">MORPH TO LUXE WHITE &bull; PRESS [L]</div>
         </div>
       </div>
     </section>
@@ -610,8 +571,7 @@
   <footer class="footer-hud">
     <div class="key-hints">
       <span>KEYBOARD:</span>
-      <span><kbd>←</kbd> 或 <kbd>I</kbd> 選定 IoT</span>
-      <span><kbd>→</kbd> 或 <kbd>V</kbd> 選定 VV</span>
+      <span><kbd>L</kbd> 選定 LAB</span>
       <span><kbd>ENTER</kbd> 確認進入</span>
     </div>
     <div id="status-readout" style="font-weight:700;">
@@ -625,119 +585,56 @@
   <script>
     (function () {
       const html = document.documentElement;
-      const btnAA = document.getElementById('btn-aa');
-      const btnVV = document.getElementById('btn-vv');
-
-      const ctaTextAA = document.getElementById('cta-text-aa');
-      const ctaSubAA = document.getElementById('cta-sub-aa');
-      const ctaTextVV = document.getElementById('cta-text-vv');
-      const ctaSubVV = document.getElementById('cta-sub-vv');
+      const btnLab = document.getElementById('btn-lab');
+      const ctaText = document.getElementById('cta-text-lab');
+      const ctaSub = document.getElementById('cta-sub-lab');
       const statusReadout = document.getElementById('status-readout');
       const hudToast = document.getElementById('hud-toast');
       const flashScreen = document.getElementById('action-flash');
 
-      // Destination Targets
-      const URL_AA = 'https://lab.zevzhan.com';
-      const URL_VV = 'https://k.zevzhan.com/vv2aa.html';
+      const URL_LAB = 'https://lab.zevzhan.com';
 
-      // Internal State: 'none' | 'aa' | 'vv'
-      let currentSelected = 'none';
+      let armed = false;
       let toastTimer = null;
 
       function showToast(msg) {
         clearTimeout(toastTimer);
         hudToast.textContent = msg;
         hudToast.classList.add('show');
-        toastTimer = setTimeout(() => {
-          hudToast.classList.remove('show');
-        }, 2000);
+        toastTimer = setTimeout(() => hudToast.classList.remove('show'), 2000);
       }
 
-      function executeRedirect(targetUrl, terminalName) {
-        statusReadout.textContent = `REDIRECTING >> ${terminalName}`;
-        showToast(`ENTERING ${terminalName} ...`);
-        
-        // Visual haptic flash
+      function executeRedirect() {
+        statusReadout.textContent = 'REDIRECTING >> LAB';
+        showToast('ENTERING LAB ...');
         flashScreen.classList.add('flash-now');
-
-        setTimeout(() => {
-          window.location.href = targetUrl;
-        }, 320);
+        setTimeout(() => { window.location.href = URL_LAB; }, 320);
       }
 
-      // Handle AA interaction (Left)
-      function handleAAClick() {
-        if (currentSelected === 'aa') {
-          // Second click on AA: Confirm and Navigate
-          executeRedirect(URL_AA, 'IoT LAB');
-        } else {
-          // First click on AA (or switching from VV):
-          // Turn entire background to WHITE, prime AA, cancel VV
-          currentSelected = 'aa';
-          html.setAttribute('data-selected', 'aa');
-
-          // Update AA texts to Confirmation state
-          ctaTextAA.textContent = 'ENTER IoT LAB ↗';
-          ctaSubAA.textContent = 'CONFIRM SELECTION // CLICK TO LAUNCH';
-
-          // Reset VV texts to Standby
-          ctaTextVV.textContent = 'CLICK TO ARM [VV]';
-          ctaSubVV.textContent = 'MORPH TO STEALTH BLACK &bull; PRESS [V] / [→]';
-
-          statusReadout.textContent = 'ARMED: IoT // CLICK AGAIN TO ENTER';
-          showToast('IoT SELECTED &bull; WHITE THEME ARMED &bull; CLICK TO ENTER');
+      function handleLabClick() {
+        if (armed) {
+          executeRedirect();
+          return;
         }
+        armed = true;
+        html.setAttribute('data-selected', 'aa');
+        ctaText.textContent = 'ENTER LAB ↗';
+        ctaSub.textContent = 'CONFIRM SELECTION // CLICK TO LAUNCH';
+        statusReadout.textContent = 'ARMED: LAB // CLICK AGAIN TO ENTER';
+        showToast('LAB SELECTED • WHITE THEME ARMED • CLICK TO ENTER');
       }
 
-      // Handle VV interaction (Right)
-      function handleVVClick() {
-        if (currentSelected === 'vv') {
-          // Second click on VV: Confirm and Navigate
-          executeRedirect(URL_VV, 'VV INTERFACE');
-        } else {
-          // First click on VV (or switching from AA):
-          // Turn entire background to BLACK, prime VV, cancel AA
-          currentSelected = 'vv';
-          html.setAttribute('data-selected', 'vv');
+      btnLab.addEventListener('click', handleLabClick);
 
-          // Update VV texts to Confirmation state
-          ctaTextVV.textContent = 'ENTER VV INTERFACE ↗';
-          ctaSubVV.textContent = 'CONFIRM SELECTION // CLICK TO LAUNCH';
-
-          // Reset AA texts to Standby
-          ctaTextAA.textContent = 'CLICK TO ARM [IoT]';
-          ctaSubAA.textContent = 'MORPH TO LUXE WHITE &bull; PRESS [I] / [←]';
-
-          statusReadout.textContent = 'ARMED: VV // CLICK AGAIN TO ENTER';
-          showToast('VV SELECTED &bull; BLACK THEME ARMED &bull; CLICK TO ENTER');
-        }
-      }
-
-      // Click Event Listeners
-      btnAA.addEventListener('click', handleAAClick);
-      btnVV.addEventListener('click', handleVVClick);
-
-      // Keyboard Controls (Left/A, Right/V, Enter/Space)
       window.addEventListener('keydown', (e) => {
         const key = e.key;
-
-        if (key === 'ArrowLeft' || key === 'i' || key === 'I') {
-          handleAAClick();
-        } else if (key === 'ArrowRight' || key === 'v' || key === 'V') {
-          handleVVClick();
+        if (key === 'l' || key === 'L') {
+          handleLabClick();
         } else if (key === 'Enter' || key === ' ') {
           e.preventDefault();
-          if (currentSelected === 'aa') {
-            executeRedirect(URL_AA, 'IoT LAB');
-          } else if (currentSelected === 'vv') {
-            executeRedirect(URL_VV, 'VV INTERFACE');
-          } else {
-            // Default arm AA on blind enter
-            handleAAClick();
-          }
+          handleLabClick();
         }
       });
-
     })();
   </script>
 </body>
